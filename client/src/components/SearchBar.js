@@ -35,7 +35,7 @@ const SearchBar = () => {
                             <i
                                 className="bi bi-x-lg"
                                 onClick={(evt) => {
-                                    evt.preventDefault(); // prevent default reflesh;
+                                    evt.preventDefault();
                                     setSearchInput("");
                                 }}
                             ></i>
@@ -53,25 +53,10 @@ const SearchBar = () => {
                                 to={`/companies/${company._id}`}
                                 onClick={(evt) => {
                                     setSearchInput("");
-                                    // evt.preventDefault();
-                                    // setTimeout(() => {
-                                    //     window.location.reload();
-
-                                    // }, 1000);
                                 }}
                             >
                                 <p className="pt-2">{company.longName}</p>
                             </Link>
-                            // <a
-                            //     key={key}
-                            //     className="dataItem"
-                            //     onClick={(evt) => {
-                            //         evt.preventDefault();
-                            //         window.location.href = `/companies/${company._id}`;
-                            //     }}
-                            // >
-                            //     <p className="pt-2">{company.longName}</p>
-                            // </a>
                         );
                     })}
             </div>

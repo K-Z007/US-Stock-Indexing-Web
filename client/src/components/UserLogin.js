@@ -24,7 +24,6 @@ const UserLogin = (props) => {
 
         try {
             let data = await logIn();
-            // console.log(data);
 
             console.log(alert);
             props.history.goBack();

@@ -16,7 +16,6 @@ const UserRegister = () => {
     });
 
     useEffect(() => {
-        //mounted is to prevent memory leakage error: when leaving this page, mounted set to false, thus will not update setError
         mounted.current = true;
         mounted.current && setError(null);
 
@@ -44,7 +43,6 @@ const UserRegister = () => {
         })
             .then((res) => {
                 if (!res.ok) {
-                    // console.log(res);
                     statusCode = res.status;
                     return res.json();
                 }
@@ -52,7 +50,6 @@ const UserRegister = () => {
                 history.push("/");
             })
             .then((data) => {
-                // console.log(data);
                 setSubmitting(false);
                 switch (statusCode) {
                     case 400:
@@ -71,12 +68,9 @@ const UserRegister = () => {
             })
             .catch((err) => {
                 // console.log(err);
-                // setError(err.message);
                 setSubmitting(false);
             });
     };
-
-    // console.log(error);
 
     return (
         <div className="row col-8 offset-2 my-5">

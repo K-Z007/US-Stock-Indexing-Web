@@ -16,7 +16,6 @@ const CompanyEdit = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                // console.log(data);
                 setCompany(data);
                 setIsLoading(false);
             })
@@ -24,8 +23,6 @@ const CompanyEdit = () => {
                 console.log("Fetch error: " + err);
             });
     }, []);
-
-    // console.log(company);
 
     const handleSubmit = (evt) => {
         evt.preventDefault();

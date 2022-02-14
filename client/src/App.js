@@ -22,8 +22,6 @@ function App() {
                     <div className="App">
                         <div className="container px-5">
                             <Switch>
-                                {/* "exact" keyword 保证route path会exactlly match目标path （这里是指完全match "/", 否则会出现"/create" path 会被"/" path 截断） */}
-                                {/* 下面两种写法都可以： */}
                                 <Route path={["/", "/companies"]} exact>
                                     <Home />
                                 </Route>

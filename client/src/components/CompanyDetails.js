@@ -7,10 +7,9 @@ import Spinner from "./Spinner";
 const CompanyDetails = () => {
     const { authDetailsContext } = useContext(AuthContext);
     const [authDetail] = authDetailsContext;
-    // const params = useParams();
-    // console.log(params);
+
     const { id } = useParams(); // extract id in the route;
-    // console.log("id:::: in details " + id);
+
     const history = useHistory();
     const { data: targetCompany, isLoading, error } = useFetch(`${process.env.REACT_APP_API}/api/companies/${id}`);
 

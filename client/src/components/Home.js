@@ -25,8 +25,6 @@ const Home = () => {
         }, 5000);
     }, [alert]);
 
-    // console.log(alert);
-
     return (
         <div className="Home">
             {alert && <Alert alert={alert} />}

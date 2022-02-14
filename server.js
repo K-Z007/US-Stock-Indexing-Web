@@ -17,8 +17,7 @@ const port = process.env.PORT || 4000;
 // cors to add client side origin so as allowing cross-origin access: if not adding origin inside cors() then it is would be treat "*" meaning allowing all different origins;
 app.use(
     cors({
-        //origin: "http://localhost:3000", // <-- allow local front end origin to access this server.
-        credentials: true, // <-- this is important to retrive the login Authentication
+        credentials: true,
     })
 );
 
@@ -27,7 +26,6 @@ app.use(cookieParser());
 
 // Serve static assets if in production:
 if (process.env.NODE_ENV === "production") {
-    // Set static folder
     app.use(express.static("client/build"));
 }
 
@@ -52,7 +50,6 @@ passport.serializeUser(function (user, done) {
 });
 
 passport.deserializeUser(function (id, done) {
-    // Replace it with your db
     User.findById(id, function (err, user) {
         done(err, user);
     });
@@ -67,13 +64,6 @@ async function connectMongoMain() {
 connectMongoMain().catch((err) => console.log("connection failed " + err));
 
 // import routers
-/*  
-match the above imported router and give it a base path ("/companies") in this case;
-so that the router files (companies.js)'s all routes will be "/localhost:4000/companies/.."
-such as:
->> get("/"）in companies.js 指的是path名称为： "http://localhost:4000/companies/"
->> get("/:id") in companies.js 指的是path名称为： "http://localhost:4000/companies/:id"
-*/
 
 app.use("/api/companies", companiesRouter);
 app.use("/api/user", userRouter);

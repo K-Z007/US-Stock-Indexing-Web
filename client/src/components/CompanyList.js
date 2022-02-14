@@ -6,7 +6,6 @@ const CompanyList = ({ companyList, title }) => {
     const renderedCompanyList = companyList.map((company) => {
         return (
             <div className="company-preview card row g-0 border-light" key={company.symbol}>
-                {/* <div className="col-md-2 text-center">{company.symbol && <img src={company.symbol} alt="" />}</div> */}
                 <Link className="card-header text-decoration-none" to={`/companies/${company._id}`}>
                     <h2 className="fs-2 fw-bold">{company.longName}</h2>
                 </Link>
