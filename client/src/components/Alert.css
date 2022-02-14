@@ -1,0 +1,7 @@
+.alert-div {
+    transition: transform 1s linear 2s;
+}
+
+.closeAlert {
+    transform: translateY(-80px);
+}

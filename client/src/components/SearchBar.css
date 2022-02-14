@@ -1,0 +1,43 @@
+.navbar {
+    z-index: 1;
+}
+
+.navbar .navForm {
+    position: relative;
+    width: 300px;
+}
+
+.navbar .list-group {
+    position: absolute;
+    width: 300px;
+    background: rgb(255, 255, 255);
+    opacity: 1;
+    max-height: 350px;
+    overflow: hidden;
+    overflow-y: auto;
+
+    left: 0;
+    right: 0;
+    top: 40px;
+}
+
+.navbar .list-group .dataItem {
+    width: 100%;
+    height: auto;
+    color: black;
+    font-weight: 350;
+}
+
+.dataItem p {
+    margin-left: 10px;
+    font-size: medium;
+}
+
+.navForm a {
+    text-decoration: none;
+}
+
+.navForm a:hover {
+    background-color: lightskyblue;
+    cursor: pointer;
+}
